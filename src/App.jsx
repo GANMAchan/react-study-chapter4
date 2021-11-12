@@ -9,7 +9,7 @@ export const App = () => {
     }, [num])
     const onClickButton = () => {
         setNum(prev =>
-            prev + 1
+            prev + 2
         )
     }
 
