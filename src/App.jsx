@@ -1,8 +1,16 @@
+import { useState } from "react"
+import { useEffect } from "react"
 import { ColoredMessage } from "./components/ColoredMessage"
 
 export const App = () => {
-    const onClickButton = () => {
+    const [ num, setNum ] = useState(0)
+    useEffect(()=>{
         alert('test')
+    }, [num])
+    const onClickButton = () => {
+        setNum(prev =>
+            prev + 1
+        )
     }
 
     return (
@@ -11,6 +19,7 @@ export const App = () => {
             <ColoredMessage color="blue">これはpropsだよ</ColoredMessage>
             <ColoredMessage color="pink">私は元気です</ColoredMessage>
             <button onClick={onClickButton}>button</button>
+            <p>{num}</p>
         </>
     )
 }
